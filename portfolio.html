@@ -319,11 +319,22 @@
       cursor: pointer;
     }
 
-    .contact-card.static-card:hover {
+    .contact-card.static-card:not(.link-card):hover {
       transform: none;
       border-color: var(--border);
       box-shadow: none;
       cursor: default;
+    }
+
+    .contact-card.link-card {
+      position: relative;
+    }
+
+    .contact-card.link-card a::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
     }
 
     .contact-card strong {
@@ -493,31 +504,31 @@
     <section id="contact">
       <h2 class="section-title">Contact & Portfolio Links</h2>
       <div class="contact-grid">
-        <div class="contact-card static-card">
+        <div class="contact-card static-card link-card">
           <strong>Email</strong>
-          <a>abrarsavan@gmail.com</a>
+          <a href="mailto:abrarsavan@gmail.com">abrarsavan@gmail.com</a>
         </div>
         <div class="contact-card static-card">
           <strong>Location</strong>
           Rajkot, India
         </div>
-        <div class="contact-card">
+        <div class="contact-card link-card">
           <strong>Behance</strong>
           <a href="https://www.behance.net/abrarsavan1/projects" target="_blank" rel="noopener">behance.net/abrarsavan1</a>
         </div>
-        <div class="contact-card">
+        <div class="contact-card link-card">
           <strong>LinkedIn</strong>
           <a href="https://www.linkedin.com/in/abrar-savan-992a681a0/" target="_blank" rel="noopener">linkedin.com/in/abrar-savan-992a681a0</a>
         </div>
-        <div class="contact-card">
+        <div class="contact-card link-card">
           <strong>Figma Portfolio</strong>
           <a href="https://www.figma.com/design/aqQzx3LFJEQOgEgDNCKRRZ/Abrar-Savan-Portfolio" target="_blank" rel="noopener">View Figma Design</a>
         </div>
-        <div class="contact-card">
+        <div class="contact-card link-card">
           <strong>Video Portfolio</strong>
           <a href="https://abrar-savan-video-editing-portfolio-02.framer.website" target="_blank" rel="noopener">Framer Portfolio</a>
         </div>
-        <div class="contact-card">
+        <div class="contact-card link-card">
           <strong>YouTube Work</strong>
           <a href="https://www.youtube.com/@PlayShifu/videos" target="_blank" rel="noopener">@PlayShifu videos</a>
         </div>
