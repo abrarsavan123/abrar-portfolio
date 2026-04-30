@@ -14,8 +14,8 @@ if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   exit 1
 fi
 
-echo "==> Pulling latest changes"
-git pull --rebase
+echo "==> Pulling latest changes (auto-stash enabled)"
+git pull --rebase --autostash
 
 echo "==> Staging files"
 git add .
