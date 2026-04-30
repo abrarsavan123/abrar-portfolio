@@ -16,7 +16,7 @@ Live website:
 
 1. Edit your files in Cursor.
 2. Save changes.
-3. Run:
+3. Run one command:
 
 ```bash
 cd /home/ab/dev/job-search
@@ -31,11 +31,13 @@ If you skip the message, a default commit message is used:
 
 ## What `publish.sh` Does
 
-- Runs `git pull --rebase` to get latest changes
+- Runs `git pull --rebase --autostash` to get latest changes safely
 - Stages all edits with `git add .`
 - Creates a commit (only if there are changes)
 - Pushes to GitHub (`main` branch)
 - GitHub Pages auto-deploys your site
+
+You do not need to run `git add` manually before using the script.
 
 ## First-Time Setup (already done)
 
@@ -50,7 +52,7 @@ If you do not use `publish.sh`, use:
 
 ```bash
 cd /home/ab/dev/job-search
-git pull --rebase
+git pull --rebase --autostash
 git add .
 git commit -m "Update portfolio"
 git push
