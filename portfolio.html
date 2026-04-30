@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abrar Savan - Portfolio</title>
+  <meta
+    name="description"
+    content="Portfolio of Abrar Savan - Visual Designer, Video Editor, Motion Graphics Artist."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --surface: #171722;
+      --surface-soft: #1f1f2d;
+      --text: #f4f4f8;
+      --muted: #b8b8c7;
+      --primary: #8b5cf6;
+      --primary-soft: #2c2148;
+      --border: #2f2f44;
+      --success: #86efac;
+      --max-width: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -20%, #2c2148, transparent 55%),
+        radial-gradient(1000px 600px at 90% -10%, #222a46, transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(15, 15, 20, 0.82);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .top-nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 0;
+    }
+
+    .brand {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .brand span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.9rem;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 6rem 0 3rem;
+    }
+
+    .kicker {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      max-width: 820px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 760px;
+      margin-top: 1.1rem;
+      font-size: 1.02rem;
+    }
+
+    .hero-cta {
+      margin-top: 1.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .btn {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      padding: 0.62rem 1rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: #595979;
+    }
+
+    .btn-primary {
+      border-color: #7c3aed;
+      background: linear-gradient(120deg, #7c3aed, #5b21b6);
+    }
+
+    .stats {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .stat-value {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    section {
+      padding: 1.5rem 0 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.9rem;
+    }
+
+    .about {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.2rem;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.9rem;
+    }
+
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .skill-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.45rem;
+      color: #ddd6fe;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.9rem;
+    }
+
+    .project {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+
+    .project h3 {
+      font-size: 0.92rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .project .tag {
+      display: inline-block;
+      background: var(--primary-soft);
+      border: 1px solid #4c1d95;
+      color: #d8b4fe;
+      font-size: 0.72rem;
+      border-radius: 999px;
+      padding: 0.15rem 0.55rem;
+      margin-right: 0.35rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 0.9rem;
+    }
+
+    .timeline-item {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.95rem;
+    }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 0.45rem;
+    }
+
+    .timeline-item h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-item ul {
+      padding-left: 1rem;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .timeline-item li {
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-grid {
+      margin: 1rem 0 3rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .contact-card strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 0.28rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      color: #9797ac;
+      font-size: 0.78rem;
+      padding: 1rem 0 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3,
+      .project-list,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links a:not(.resume-link) {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="top-nav">
+    <div class="container top-nav-inner">
+      <div class="brand">Abrar <span>Savan</span></div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a class="btn resume-link" href="resume.html">Resume</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero container">
+    <span class="kicker">Visual Designer · Video Editor · Motion Graphics</span>
+    <h1>I create high-impact visual stories across video, UI/UX, and 3D product design.</h1>
+    <p>
+      I am Abrar Savan, a multi-disciplinary creative professional based in Rajkot, India. I build polished,
+      brand-aligned content from concept to final output, combining visual storytelling, design systems, and
+      production speed for modern digital products.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="mailto:abrarsavan@gmail.com">Hire Me</a>
+      <a class="btn" href="https://www.behance.net/abrarsavan1/projects" target="_blank" rel="noopener">Behance</a>
+      <a class="btn" href="https://www.linkedin.com/in/abrar-savan-992a681a0/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://www.youtube.com/@PlayShifu/videos" target="_blank" rel="noopener">YouTube Work</a>
+      <a class="btn" href="https://www.figma.com/design/aqQzx3LFJEQOgEgDNCKRRZ/Abrar-Savan-Portfolio" target="_blank" rel="noopener">Figma Portfolio</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-value">3</div>
+        <div class="stat-label">Core disciplines: video, UI/UX, and 3D visualization</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">2+</div>
+        <div class="stat-label">Years of hands-on professional creative production</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">End-to-End</div>
+        <div class="stat-label">From ideation and assets to final delivery and refinement</div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2 class="section-title">About</h2>
+      <div class="about">
+        I bring a full-stack creative workflow: scripting alignment, AI voiceover pacing with ElevenLabs, editing,
+        color correction, motion graphics, and final sound design. I have delivered work for EdTech brands and
+        consumer products while maintaining consistency, speed, and high visual quality. I am currently looking for
+        opportunities where I can contribute to a collaborative and ambitious creative team.
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Skill Stack</h2>
+      <div class="grid-3">
+        <article class="skill-card">
+          <h3>Video Production</h3>
+          <p>Adobe Premiere Pro, After Effects, color grading, sound design, subtitles, and branded motion graphics.</p>
+        </article>
+        <article class="skill-card">
+          <h3>UI / UX Design</h3>
+          <p>Figma workflows, wireframes, interaction flows, reusable components, and scalable design systems.</p>
+        </article>
+        <article class="skill-card">
+          <h3>3D Visualization</h3>
+          <p>Photoreal product renders using HDRI lighting, PBR materials, and commercial composition standards.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="project-list">
+        <article class="project">
+          <h3>PlayShifu Product Explainer Series</h3>
+          <p>Built and managed a complete multi-video pipeline for an EdTech brand, from scripting alignment to final export.</p>
+          <span class="tag">Video Editing</span><span class="tag">ElevenLabs</span><span class="tag">Motion Graphics</span>
+        </article>
+        <article class="project">
+          <h3>Thotica - Mobile App UI Design</h3>
+          <p>Designed a complete mobile experience from wireframes to high-fidelity prototype with a cohesive design system.</p>
+          <span class="tag">Figma</span><span class="tag">UI/UX</span><span class="tag">Design Systems</span>
+        </article>
+        <article class="project">
+          <h3>3D Product Visualization Series</h3>
+          <p>Created photorealistic renders across multiple product categories with custom lighting and material studies.</p>
+          <span class="tag">3D Rendering</span><span class="tag">PBR</span><span class="tag">HDRI</span>
+        </article>
+        <article class="project">
+          <h3>Brand Motion Assets for PlayShifu</h3>
+          <p>Delivered intro sequences, social stories, and promotional motion content for Instagram and YouTube.</p>
+          <span class="tag">After Effects</span><span class="tag">Social Content</span><span class="tag">Branding</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-top">
+            <span><strong>PlayShifu</strong> - Video Editor</span>
+            <span>2023 - Present</span>
+          </div>
+          <h3>End-to-end video production and brand consistency</h3>
+          <ul>
+            <li>Managed full production pipeline from raw footage to polished final videos.</li>
+            <li>Generated and paced AI voiceovers in ElevenLabs for consistent narration quality.</li>
+            <li>Handled color correction, sound design, subtitles, and kinetic text animation.</li>
+            <li>Collaborated with DOP, copywriter, and director for aligned creative outcomes.</li>
+          </ul>
+        </article>
+        <article class="timeline-item">
+          <div class="timeline-top">
+            <span><strong>Societiez</strong> - 3D Artist & Graphic Designer</span>
+            <span>2022 - 2023</span>
+          </div>
+          <h3>Photoreal product visuals and campaign design</h3>
+          <ul>
+            <li>Produced 3D renders for electronics and lifestyle products.</li>
+            <li>Developed expertise in HDRI lighting setups and PBR material creation.</li>
+            <li>Created brand visuals and marketing graphics across campaigns.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact & Portfolio Links</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <strong>Email</strong>
+          <a href="mailto:abrarsavan@gmail.com">abrarsavan@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <strong>Location</strong>
+          Rajkot, India
+        </div>
+        <div class="contact-card">
+          <strong>Behance</strong>
+          <a href="https://www.behance.net/abrarsavan1/projects" target="_blank" rel="noopener">behance.net/abrarsavan1</a>
+        </div>
+        <div class="contact-card">
+          <strong>LinkedIn</strong>
+          <a href="https://www.linkedin.com/in/abrar-savan-992a681a0/" target="_blank" rel="noopener">linkedin.com/in/abrar-savan-992a681a0</a>
+        </div>
+        <div class="contact-card">
+          <strong>Figma Portfolio</strong>
+          <a href="https://www.figma.com/design/aqQzx3LFJEQOgEgDNCKRRZ/Abrar-Savan-Portfolio" target="_blank" rel="noopener">View Figma Design</a>
+        </div>
+        <div class="contact-card">
+          <strong>Video Portfolio</strong>
+          <a href="https://abrar-savan-video-editing-portfolio-02.framer.website" target="_blank" rel="noopener">Framer Portfolio</a>
+        </div>
+        <div class="contact-card">
+          <strong>YouTube Work</strong>
+          <a href="https://www.youtube.com/@PlayShifu/videos" target="_blank" rel="noopener">@PlayShifu videos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">Open to creative roles in video production, motion design, and UI/UX collaboration.</div>
+  </footer>
+</body>
+</html>
