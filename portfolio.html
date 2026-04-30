@@ -316,6 +316,14 @@
       transform: translateY(-2px);
       border-color: #4a4a68;
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+      cursor: pointer;
+    }
+
+    .contact-card.static-card:hover {
+      transform: none;
+      border-color: var(--border);
+      box-shadow: none;
+      cursor: default;
     }
 
     .contact-card strong {
@@ -485,11 +493,11 @@
     <section id="contact">
       <h2 class="section-title">Contact & Portfolio Links</h2>
       <div class="contact-grid">
-        <div class="contact-card">
+        <div class="contact-card static-card">
           <strong>Email</strong>
           <a>abrarsavan@gmail.com</a>
         </div>
-        <div class="contact-card">
+        <div class="contact-card static-card">
           <strong>Location</strong>
           Rajkot, India
         </div>
